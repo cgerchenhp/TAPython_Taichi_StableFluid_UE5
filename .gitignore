@@ -16,6 +16,7 @@
 *.dylib
 *.dll
 
+
 # Fortran module files
 *.mod
 
@@ -72,3 +73,9 @@ Plugins/*/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+
+*/Intermediate/*
+*/Saved/*
+*/.idea/*
+*.pyc
+!UnrealEditor-TAPython.dll

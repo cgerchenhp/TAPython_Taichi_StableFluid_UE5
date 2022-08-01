@@ -1,0 +1,92 @@
+{
+	"TabLabel": "Taichi Stable Fluid",
+	"InitTabSize": [300, 375],
+	"InitTabPosition": [800, 400],
+    "InitPyCmd": "import TaichiStableFluid; chameleon_stable_fluid = TaichiStableFluid.taichi_stable_fluid.StableFluid(%JsonPath)",
+    "Root": {
+        "SBorder": {
+            "BorderImage": {
+                "Style": "FEditorStyle",
+                "Brush": "ToolPanel.DarkGroupBorder"
+            },
+            "Content":{
+                "SVerticalBox":
+                {
+
+                    "Slots": [
+                        {
+                            "AutoHeight": true,
+                            "SHorizontalBox":
+                            {
+                                "Slots": [
+                                    {
+
+                                        "SImage": {
+                                            "DesiredSizeOverride": [300, 300],
+                                            "Aka": "taichi_fluid_image",
+                                            "OnTick": "chameleon_stable_fluid.on_tick()",
+
+                                            "OnMouseLeave": "chameleon_stable_fluid.on_tick()",
+                                            "OnMouseMove": "chameleon_stable_fluid.on_mouse_move(%uv, %mouse_flags)"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "AutoHeight": true,
+                            "SHorizontalBox":
+                            {
+                                "Slots": [
+                                    {
+                                        "SButton": {
+                                            "Text": "Reset",
+                                            "OnClick": "chameleon_stable_fluid.on_button_Reset_click()"
+                                        }
+                                    },
+                                    {
+                                        "SButton": {
+                                            "Text": "Pause",
+                                            "OnClick": "chameleon_stable_fluid.on_button_Pause_click()"
+                                        }
+                                    },
+                                    {
+
+                                        "SComboButton": {
+                                            "HAlign": "Center",
+											"Visibility": "Collapsed",
+                                            "ButtonContent": {
+                                                "STextBlock": {
+                                                    "Text": "Choose And Trigger the Command"
+                                                }
+                                            },
+                                            "HasDownArrow": true,
+                                            "OnGetMenuContent": {
+                                                "items": [
+                                                    {"name": "dyes", "Command": "chameleon_stable_fluid.change_mode('d')" },
+                                                    {"name": "Velocities", "Command": "chameleon_stable_fluid.change_mode('v')" },
+                                                    {"name": "Pressures", "Command": "chameleon_stable_fluid.change_mode('c')" }
+
+                                                ]
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "AutoHeight": true,
+                            "SEditableText":
+                            {
+                                "Aka": "Output",
+                                "Text": "Some Text",
+                                "IsReadOnly": true
+                            }
+                        }
+                    ]
+                }
+
+            }
+        }
+    }
+}
