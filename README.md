@@ -1,7 +1,7 @@
 # TAPython_Taichi_StableFluid_UE5
 在UE5中通过TAPython和Taichi-lang修改体积云覆盖范围的工程。本工程已包含预编译的TAPython插件v1.0.7
 
-![StableFluid In UE5](StableFluid_UE5.gif)
+![StableFluid In UE5](https://www.tacolor.xyz/images/G011_StableFluid_UE5.gif)
 
 
 本示例仅供演示TAPython与Taichi-lang在UE5中的通讯之用，非游戏实际实现步骤。
